@@ -1,5 +1,10 @@
 <template>
-  <div class="home">
+  <div
+    class="home"
+    oncontextmenu="return false"
+    onselectstart="return false"
+    ondragstart="return false"
+  >
     <header class="header">
       <img src="/imgs/logo.png" alt="logo" />
     </header>
@@ -211,6 +216,11 @@ export default {
         this.people = this.ogPeople;
       }, 1500);
     },
+  },
+  mounted() {
+    document.oncontextmenu = function () {
+      return false;
+    };
   },
 };
 </script>
