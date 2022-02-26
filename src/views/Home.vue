@@ -3,17 +3,25 @@
     <header class="header">
       <img src="/imgs/logo.png" alt="logo" />
     </header>
-    <div class="img-top">
-      <img src="/imgs/people-white.png" alt="album" />
-    </div>
-    <div class="icons__wrapper">
-      <div class="icon" v-for="(icon, index) in icons" :key="index">
-        <div class="icon-img">
-          <img :src="icon.imgPath" :alt="icon.name" :style="icon.style" />
-        </div>
-        <span class="icon-name">{{ icon.name }}</span>
+    <main class="main__container">
+      <div class="people__wrapper">
+        <img
+          :src="person.src"
+          :alt="person.alt"
+          v-for="(person, index) in people"
+          :key="person.alt"
+          @click.stop="onClick(index)"
+        />
       </div>
-    </div>
+      <div class="icons__wrapper">
+        <div class="icon" v-for="(icon, index) in icons" :key="index">
+          <div class="icon-img">
+            <img :src="icon.imgPath" :alt="icon.name" :style="icon.style" />
+          </div>
+          <span class="icon-name">{{ icon.name }}</span>
+        </div>
+      </div>
+    </main>
     <footer class="footer">
       <span>Copyright&copy; 2022. Earth Sandwitch. All rights reserved.</span>
     </footer>
@@ -21,13 +29,110 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
   data() {
     return {
+      ogPeople: [
+        {
+          src: "/imgs/people/1.jpg",
+          alt: "p1",
+        },
+        {
+          src: "/imgs/people/2.jpg",
+          alt: "p2",
+        },
+        {
+          src: "/imgs/people/3.jpg",
+          alt: "p3",
+        },
+        {
+          src: "/imgs/people/4.jpg",
+          alt: "p4",
+        },
+        {
+          src: "/imgs/people/5.jpg",
+          alt: "p5",
+        },
+        {
+          src: "/imgs/people/6.jpg",
+          alt: "p6",
+        },
+        {
+          src: "/imgs/people/7.jpg",
+          alt: "p7",
+        },
+        {
+          src: "/imgs/people/8.jpg",
+          alt: "p8",
+        },
+        {
+          src: "/imgs/people/9.jpg",
+          alt: "p9",
+        },
+        {
+          src: "/imgs/people/10.jpg",
+          alt: "p10",
+        },
+        {
+          src: "/imgs/people/11.jpg",
+          alt: "p11",
+        },
+        {
+          src: "/imgs/people/12.jpg",
+          alt: "p12",
+        },
+      ],
+      people: [
+        {
+          src: "/imgs/people/1.jpg",
+          alt: "p1",
+        },
+        {
+          src: "/imgs/people/2.jpg",
+          alt: "p2",
+        },
+        {
+          src: "/imgs/people/3.jpg",
+          alt: "p3",
+        },
+        {
+          src: "/imgs/people/4.jpg",
+          alt: "p4",
+        },
+        {
+          src: "/imgs/people/5.jpg",
+          alt: "p5",
+        },
+        {
+          src: "/imgs/people/6.jpg",
+          alt: "p6",
+        },
+        {
+          src: "/imgs/people/7.jpg",
+          alt: "p7",
+        },
+        {
+          src: "/imgs/people/8.jpg",
+          alt: "p8",
+        },
+        {
+          src: "/imgs/people/9.jpg",
+          alt: "p9",
+        },
+        {
+          src: "/imgs/people/10.jpg",
+          alt: "p10",
+        },
+        {
+          src: "/imgs/people/11.jpg",
+          alt: "p11",
+        },
+        {
+          src: "/imgs/people/12.jpg",
+          alt: "p12",
+        },
+      ],
       icons: [
         {
           name: "Apple Music",
@@ -92,6 +197,21 @@ export default {
       ],
     };
   },
+  methods: {
+    onClick(index) {
+      console.log(index);
+      this.people = [];
+      for (let i = 0; i < 12; i++) {
+        this.people.push({
+          src: `/imgs/people/${index + 1}.jpg`,
+          alt: `p${i}`,
+        });
+      }
+      setTimeout(() => {
+        this.people = this.ogPeople;
+      }, 1500);
+    },
+  },
 };
 </script>
 
@@ -126,9 +246,13 @@ export default {
     width: 65%;
   }
 }
-.img-top {
+.main__container {
   padding-top: 60px;
-  width: 100%;
+}
+.people__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5px;
   img {
     width: 100%;
   }
