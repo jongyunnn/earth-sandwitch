@@ -6,7 +6,7 @@
     ondragstart="return false"
   >
     <header class="header">
-      <img src="/imgs/logo.png" alt="logo" />
+      <img src="/imgs/logo.png" alt="logo" @click.stop="scrollTop" />
     </header>
     <main class="main__container">
       <div class="people__wrapper">
@@ -17,12 +17,19 @@
           :key="person.alt"
           @click.stop="onClick(index)"
         />
+        <div class="people__skeleton" v-if="loading">
+          <div
+            class="skeleton"
+            v-for="person in people"
+            :key="person.alt"
+          ></div>
+        </div>
       </div>
       <div class="icons__wrapper">
         <div class="icon" v-for="(icon, index) in icons" :key="index">
-          <div class="icon-img">
+          <a class="icon-img" :href="icon.to" target="_blank">
             <img :src="icon.imgPath" :alt="icon.name" :style="icon.style" />
-          </div>
+          </a>
           <span class="icon-name">{{ icon.name }}</span>
         </div>
       </div>
@@ -34,10 +41,12 @@
 </template>
 
 <script>
+import bus from "../utils/bus.js";
 export default {
   name: "Home",
   data() {
     return {
+      loading: true,
       ogPeople: [
         {
           src: "/imgs/people/1.jpg",
@@ -142,82 +151,89 @@ export default {
         {
           name: "Apple Music",
           imgPath: "/imgs/apple.png",
-          to: "",
+          to: "https://music.apple.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
           name: "Spotify",
           imgPath: "/imgs/spotify.png",
-          to: "",
+          to: "https://www.spotify.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
           name: "YouTube",
           imgPath: "/imgs/youtube.png",
-          to: "",
+          to: "https://youtube.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
-          name: "YT Music",
+          name: "YouTube Music",
           imgPath: "/imgs/ytmusic.png",
-          to: "",
+          to: "https://music.youtube.com",
           style: "",
         },
         {
           name: "Melon",
           imgPath: "/imgs/melon.png",
           to: "",
-          style: "",
+          style: "https://www.melon.com",
         },
         {
           name: "Genie",
           imgPath: "/imgs/genie.png",
-          to: "",
+          to: "https://www.genie.co.kr",
           style: "",
         },
         {
           name: "Bugs",
           imgPath: "/imgs/bugs.png",
-          to: "",
+          to: "https://music.bugs.co.kr",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
           name: "Vibe",
           imgPath: "/imgs/vibe.png",
-          to: "",
+          to: "https://vibe.naver.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
           name: "Flo",
           imgPath: "/imgs/flo.png",
-          to: "",
+          to: "https://www.music-flo.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
           name: "SoundCloud",
           imgPath: "/imgs/soundcloud.png",
-          to: "",
+          to: "https://soundcloud.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
       ],
     };
   },
   methods: {
+    scrollTop() {
+      window.scroll(0, 0);
+    },
     onClick(index) {
-      console.log(index);
-      this.people = [];
+      const newPeople = [];
       for (let i = 0; i < 12; i++) {
-        this.people.push({
+        newPeople.push({
           src: `/imgs/people/${index + 1}.jpg`,
           alt: `p${i}`,
         });
       }
+      this.people = newPeople;
       setTimeout(() => {
         this.people = this.ogPeople;
-      }, 1500);
+      }, 2000);
     },
   },
   mounted() {
+    window.addEventListener("load", () => {
+      bus.$emit("end:spinner");
+      this.loading = false;
+    });
     document.oncontextmenu = function () {
       return false;
     };
@@ -254,6 +270,7 @@ export default {
   height: 60px;
   img {
     width: 52%;
+    cursor: pointer;
   }
 }
 .main__container {
@@ -261,10 +278,28 @@ export default {
 }
 .people__wrapper {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5px;
   img {
     width: 100%;
+  }
+}
+.people__skeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5px;
+  width: 100%;
+  padding-bottom: 125%;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  .skeleton {
+    background-color: #e2e2e2;
+    width: 100%;
+    padding-bottom: 100%;
   }
 }
 .icons__wrapper {
@@ -287,8 +322,7 @@ export default {
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: 20vw;
-      max-height: 92px;
+      aspect-ratio: 1;
       img {
         width: 100%;
       }
@@ -297,6 +331,7 @@ export default {
       margin-top: 8px;
       font-size: 10px;
       color: #121212;
+      white-space: nowrap;
     }
   }
 }
