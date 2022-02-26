@@ -35,6 +35,20 @@
       </div>
     </main>
     <footer class="footer">
+      <div class="sns__wrapper">
+        <a href="https://youtube.com" target="_blank">
+          <img src="/imgs/sns/youtube-brands.svg" alt="ch-youtube" />
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="/imgs/sns/twitter-brands.svg" alt="ch-twitter" />
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <img src="/imgs/sns/facebook-brands.svg" alt="ch-facebook" />
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="/imgs/sns/instagram-brands.svg" alt="ch-instagram" />
+        </a>
+      </div>
       <span>Copyright&copy; 2022. Earth Sandwitch. All rights reserved.</span>
     </footer>
   </div>
@@ -47,6 +61,7 @@ export default {
   data() {
     return {
       loading: true,
+      clicked: false,
       ogPeople: [
         {
           src: "/imgs/people/1.jpg",
@@ -216,6 +231,10 @@ export default {
       window.scroll(0, 0);
     },
     onClick(index) {
+      if (this.clicked) {
+        return;
+      }
+      this.clicked = true;
       const newPeople = [];
       for (let i = 0; i < 12; i++) {
         newPeople.push({
@@ -226,6 +245,7 @@ export default {
       this.people = newPeople;
       setTimeout(() => {
         this.people = this.ogPeople;
+        this.clicked = false;
       }, 2000);
     },
   },
@@ -337,11 +357,24 @@ export default {
 }
 .footer {
   display: flex;
+  flex-direction: column;
   min-height: 120px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #e2e2e2;
   color: #121212;
   font-size: 12px;
+  padding: 32px 20px;
+  .sns__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
 }
 </style>
