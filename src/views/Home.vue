@@ -305,6 +305,8 @@ export default {
   position: relative;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5px;
+  width: 100%;
+  aspect-ratio: 1.25;
   img {
     width: 100%;
   }
@@ -314,7 +316,7 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5px;
   width: 100%;
-  padding-bottom: 125%;
+  aspect-ratio: 1.25;
   position: absolute;
   z-index: 3;
   top: 0;
