@@ -253,7 +253,7 @@ export default {
   position: fixed;
   height: 60px;
   img {
-    width: 65%;
+    width: 52%;
   }
 }
 .main__container {
