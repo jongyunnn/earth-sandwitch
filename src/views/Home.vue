@@ -190,8 +190,8 @@ export default {
         {
           name: "Melon",
           imgPath: "/imgs/melon.png",
-          to: "",
-          style: "https://www.melon.com",
+          to: "https://www.melon.com",
+          style: "",
         },
         {
           name: "Genie",
@@ -242,9 +242,13 @@ export default {
           alt: `p${i}`,
         });
       }
+      this.loading = true;
       this.people = newPeople;
+      this.loading = false;
       setTimeout(() => {
+        this.loading = true;
         this.people = this.ogPeople;
+        this.loading = false;
         this.clicked = false;
       }, 2000);
     },
