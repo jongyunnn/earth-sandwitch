@@ -62,6 +62,7 @@ export default {
     return {
       loading: true,
       clicked: false,
+      count: 0,
       ogPeople: [
         {
           src: "/imgs/people/1.jpg",
@@ -235,11 +236,12 @@ export default {
         return;
       }
       this.clicked = true;
+      this.count++;
       const newPeople = [];
       for (let i = 0; i < 12; i++) {
         newPeople.push({
           src: `/imgs/people/${index + 1}.jpg`,
-          alt: `p${i + 1}`,
+          alt: `p${10 * this.count + i + 1}`,
         });
       }
       this.loading = true;
