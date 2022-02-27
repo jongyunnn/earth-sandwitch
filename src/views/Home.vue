@@ -245,9 +245,16 @@ export default {
       this.loading = true;
       this.people = newPeople;
       this.loading = false;
+      const oldPeople = [];
+      for (let j = 0; j < 12; j++) {
+        oldPeople.push({
+          src: `/imgs/people/${j + 1}.jpg`,
+          alt: `p${j + 1}`,
+        });
+      }
       setTimeout(() => {
         this.loading = true;
-        this.people = this.ogPeople;
+        this.people = oldPeople;
         this.loading = false;
         this.clicked = false;
       }, 2000);
