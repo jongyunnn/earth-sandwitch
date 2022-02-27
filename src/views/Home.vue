@@ -309,6 +309,7 @@ export default {
   aspect-ratio: 1.25;
   img {
     width: 100%;
+    aspect-ratio: 1;
   }
 }
 .people__skeleton {
@@ -325,7 +326,7 @@ export default {
   .skeleton {
     background-color: #e2e2e2;
     width: 100%;
-    padding-bottom: 100%;
+    aspect-ratio: 1;
   }
 }
 .icons__wrapper {

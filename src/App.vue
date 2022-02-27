@@ -52,6 +52,7 @@ body {
   width: 100vw;
   margin: 0 auto;
   position: relative;
+  background-color: #515151;
 }
 
 #nav {
