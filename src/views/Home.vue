@@ -239,7 +239,7 @@ export default {
       for (let i = 0; i < 12; i++) {
         newPeople.push({
           src: `/imgs/people/${index + 1}.jpg`,
-          alt: `p${i}`,
+          alt: `p${i + 1}`,
         });
       }
       this.loading = true;
