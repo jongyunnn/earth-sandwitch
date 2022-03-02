@@ -175,7 +175,7 @@ export default {
         {
           name: "Spotify",
           imgPath: "/imgs/spotify.png",
-          to: "https://www.spotify.com",
+          to: "https://open.spotify.com/album/4w8h8CosuDxEDsCbhVo7in?si=688gOh8yTTiJbUIDfbL27g",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
@@ -187,13 +187,13 @@ export default {
         {
           name: "YouTube Music",
           imgPath: "/imgs/ytmusic.png",
-          to: "https://music.youtube.com",
+          to: "https://music.youtube.com/playlist?list=OLAK5uy_mwaTa36b2abRSIFUVVNhrwevZYPKw32Zs&feature=share",
           style: "",
         },
         {
           name: "Melon",
           imgPath: "/imgs/melon.png",
-          to: "https://www.melon.com",
+          to: "http://kko.to/pp37GQjeA",
           style: "",
         },
         {
@@ -217,7 +217,7 @@ export default {
         {
           name: "Flo",
           imgPath: "/imgs/flo.png",
-          to: "https://www.music-flo.com",
+          to: "http://flomuz.io/s/e.BAFhE",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
