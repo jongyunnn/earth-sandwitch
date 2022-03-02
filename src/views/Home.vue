@@ -175,7 +175,7 @@ export default {
         {
           name: "Spotify",
           imgPath: "/imgs/spotify.png",
-          to: "https://open.spotify.com/album/4w8h8CosuDxEDsCbhVo7in?si=688gOh8yTTiJbUIDfbL27g",
+          to: "https://open.spotify.com/album/4w8h8CosuDxEDsCbhVo7in?si=E_fBH2GrR3CsxCM9U0WjOA",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
@@ -199,19 +199,19 @@ export default {
         {
           name: "Genie",
           imgPath: "/imgs/genie.png",
-          to: "https://www.genie.co.kr",
+          to: "http://genie.co.kr/6BGZU1",
           style: "",
         },
         {
           name: "Bugs",
           imgPath: "/imgs/bugs.png",
-          to: "https://music.bugs.co.kr",
+          to: "https://music.bugs.co.kr/album/20453129",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
           name: "Vibe",
           imgPath: "/imgs/vibe.png",
-          to: "https://vibe.naver.com",
+          to: "https://vibe.naver.com/album/7313098",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
