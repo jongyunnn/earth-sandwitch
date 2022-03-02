@@ -167,30 +167,6 @@ export default {
       ],
       icons: [
         {
-          name: "Apple Music",
-          imgPath: "/imgs/apple.png",
-          to: "https://music.apple.com",
-          style: "transform: scale3d(0.9, 0.9, 0.9)",
-        },
-        {
-          name: "Spotify",
-          imgPath: "/imgs/spotify.png",
-          to: "https://open.spotify.com/album/4w8h8CosuDxEDsCbhVo7in?si=E_fBH2GrR3CsxCM9U0WjOA",
-          style: "transform: scale3d(0.9, 0.9, 0.9)",
-        },
-        {
-          name: "YouTube",
-          imgPath: "/imgs/youtube.png",
-          to: "https://youtube.com",
-          style: "transform: scale3d(0.9, 0.9, 0.9)",
-        },
-        {
-          name: "YouTube Music",
-          imgPath: "/imgs/ytmusic.png",
-          to: "https://music.youtube.com/playlist?list=OLAK5uy_mwaTa36b2abRSIFUVVNhrwevZYPKw32Zs&feature=share",
-          style: "",
-        },
-        {
           name: "Melon",
           imgPath: "/imgs/melon.png",
           to: "http://kko.to/pp37GQjeA",
@@ -218,6 +194,30 @@ export default {
           name: "Flo",
           imgPath: "/imgs/flo.png",
           to: "http://flomuz.io/s/e.BAFhE",
+          style: "transform: scale3d(0.9, 0.9, 0.9)",
+        },
+        {
+          name: "Spotify",
+          imgPath: "/imgs/spotify.png",
+          to: "https://open.spotify.com/album/4w8h8CosuDxEDsCbhVo7in?si=E_fBH2GrR3CsxCM9U0WjOA",
+          style: "transform: scale3d(0.9, 0.9, 0.9)",
+        },
+        {
+          name: "YouTube Music",
+          imgPath: "/imgs/ytmusic.png",
+          to: "https://music.youtube.com/playlist?list=OLAK5uy_mwaTa36b2abRSIFUVVNhrwevZYPKw32Zs&feature=share",
+          style: "",
+        },
+        {
+          name: "Apple Music",
+          imgPath: "/imgs/apple.png",
+          to: "https://music.apple.com",
+          style: "transform: scale3d(0.9, 0.9, 0.9)",
+        },
+        {
+          name: "YouTube",
+          imgPath: "/imgs/youtube.png",
+          to: "https://youtube.com",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
