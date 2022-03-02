@@ -36,16 +36,19 @@
     </main>
     <footer class="footer">
       <div class="sns__wrapper">
-        <a href="https://youtube.com" target="_blank">
+        <a
+          href="https://www.youtube.com/channel/UCl6o-kqwVCKlSZVhQPWpsEg"
+          target="_blank"
+        >
           <img src="/imgs/sns/youtube-brands.svg" alt="ch-youtube" />
         </a>
-        <a href="https://twitter.com" target="_blank">
+        <a href="https://twitter.com/Earth__Sandwich" target="_blank">
           <img src="/imgs/sns/twitter-brands.svg" alt="ch-twitter" />
         </a>
-        <a href="https://facebook.com" target="_blank">
+        <!-- <a href="https://facebook.com" target="_blank">
           <img src="/imgs/sns/facebook-brands.svg" alt="ch-facebook" />
-        </a>
-        <a href="https://instagram.com" target="_blank">
+        </a> -->
+        <a href="https://www.instagram.com/earthsandwich2020" target="_blank">
           <img src="/imgs/sns/instagram-brands.svg" alt="ch-instagram" />
         </a>
       </div>
