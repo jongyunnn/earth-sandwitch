@@ -211,7 +211,7 @@ export default {
         {
           name: "YouTube Music",
           imgPath: "/imgs/ytmusic.png",
-          to: "https://music.youtube.com/playlist?list=OLAK5uy_mwaTa36b2abRSIFUVVNhrwevZYPKw32Zs&feature=share",
+          to: "https://music.youtube.com/browse/MPREb_2Hc6gLutcAH",
           style: "",
         },
 
