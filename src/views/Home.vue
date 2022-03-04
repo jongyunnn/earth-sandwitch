@@ -218,7 +218,7 @@ export default {
         {
           name: "YouTube",
           imgPath: "/imgs/youtube.png",
-          to: "https://youtu.be/lV-lYpBTmEs",
+          to: "https://youtube.com/playlist?list=PLqhcCnduVrq5OWJWjqM-url6sf9k5LVgj",
           style: "transform: scale3d(0.9, 0.9, 0.9)",
         },
         {
