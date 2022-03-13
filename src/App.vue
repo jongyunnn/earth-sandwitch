@@ -52,7 +52,8 @@ body {
   width: 100vw;
   margin: 0 auto;
   position: relative;
-  background-color: #515151;
+  background-color: #deebdd;
+  background-image: linear-gradient(315deg, #deebdd 0%, #bbdbbe 74%);
 }
 
 #nav {
