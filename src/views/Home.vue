@@ -52,7 +52,7 @@
           <img src="/imgs/sns/instagram-brands.svg" alt="ch-instagram" />
         </a>
       </div>
-      <span>Copyright&copy; 2022. Earth Sandwitch. All rights reserved.</span>
+      <span>Copyright&copy; 2022. Earth Sandwich. All rights reserved.</span>
     </footer>
   </div>
 </template>
