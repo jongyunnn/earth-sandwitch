@@ -11,6 +11,7 @@
     <main class="main__container">
       <div class="people__wrapper">
         <img
+          class="lazy"
           :src="person.src"
           :alt="person.alt"
           v-for="(person, index) in people"
@@ -28,7 +29,12 @@
       <div class="icons__wrapper">
         <div class="icon" v-for="(icon, index) in icons" :key="index">
           <a class="icon-img" :href="icon.to" target="_blank">
-            <img :src="icon.imgPath" :alt="icon.name" :style="icon.style" />
+            <img
+              :src="icon.imgPath"
+              :alt="icon.name"
+              :style="icon.style"
+              class="lazy"
+            />
           </a>
           <span class="icon-name">{{ icon.name }}</span>
         </div>
@@ -45,9 +51,6 @@
         <a href="https://twitter.com/Earth__Sandwich" target="_blank">
           <img src="/imgs/sns/twitter-brands.svg" alt="ch-twitter" />
         </a>
-        <!-- <a href="https://facebook.com" target="_blank">
-          <img src="/imgs/sns/facebook-brands.svg" alt="ch-facebook" />
-        </a> -->
         <a href="https://www.instagram.com/earthsandwich2020" target="_blank">
           <img src="/imgs/sns/instagram-brands.svg" alt="ch-instagram" />
         </a>
